@@ -4,13 +4,32 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import TimerOutlinedIcon from "@mui/icons-material/TimerOutlined";
 import Link from "next/link";
+import Image from "next/image";
+import {
+  addItem,
+  calculateTotals,
+  decrementItem,
+} from "../../store/slices/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 const SmallScreenProductCarousel = ({ products, color, title }) => {
+  const dispatch = useDispatch();
+  const cartItems = useSelector((state) => state.cart.items);
+  const getQuantity = (productId) => {
+    const product = cartItems.find((item) => item.id === productId);
+
+    return product ? product.quantity : 0;
+  };
+    React.useEffect(() => {
+      dispatch(calculateTotals()); // Ensure totals are up-to-date
+    }, [cartItems, dispatch]);
   const settings = {
+    centerMode: true,
     dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
+
     responsive: [
       {
         breakpoint: 1024,
@@ -46,10 +65,12 @@ const SmallScreenProductCarousel = ({ products, color, title }) => {
               ) : (
                 <></>
               )}
-              <img
-                src={`/images/product-${index + 1}.png`}
+              <Image
+                src={product.image.trimEnd()}
                 alt={product.name}
-                className="w-full h-52   object-contain mb-4  border rounded-lg"
+                height={140}
+                width={140}
+                className="w-full  object-contain mb-4  border rounded-lg"
               />
               <p
                 className={`text-[10px] flex ${
@@ -63,12 +84,54 @@ const SmallScreenProductCarousel = ({ products, color, title }) => {
               </p>
               <h3 className="font-medium text-sm pb-2">{product.name}</h3>
               <p className="text-sm text-gray-500 pb-2">{product.size}</p>
-              <div className="flex justify-between items-center mt-auto">
-                <p className="text-sm font-bold">₹{product.price}</p>
-                <button className="bg-green-50 text-xs font-semibold border border-green-700 text-green-700 px-6 py-2 rounded-lg">
-                  ADD
-                </button>
-              </div>
+                <div className="flex justify-between items-center mt-auto">
+                       <p className="text-sm font-bold">₹{product.price}</p>
+                       <div className="flex items-center">
+                         {getQuantity(product.id) > 0 ? (
+                           <div className="font-bold border rounded-md bg-green-700 text-white flex justify-around items-center text-xs">
+                             <button
+                               onClick={() => dispatch(decrementItem(product.id))}
+                               className="px-2 py-1 rounded-l"
+                             >
+                               -
+                             </button>
+                             <span className="px-4">{getQuantity(product.id)}</span>
+                             <button
+                               onClick={() =>
+                                 dispatch(
+                                   addItem({
+                                     id: product.id,
+                                     name: product.name,
+                                     price: product.price,
+                                     image:product.image
+                                   })
+                                 )
+                               }
+                               className="px-2 py-1 rounded-r"
+                             >
+                               +
+                             </button>
+                           </div>
+                         ) : (
+                           <button
+                             onClick={() =>
+                               dispatch(
+                                 addItem({
+                                   id: product.id,
+                                   name: product.name,
+                                   price: product.price,
+                                   image:product.image
+
+                                 })
+                               )
+                             }
+                             className="bg-green-50 text-xs font-semibold border border-green-700 text-green-700 px-6 py-2 rounded-lg"
+                           >
+                             ADD
+                           </button>
+                         )}
+                       </div>
+                     </div>
             </div>
           </div>
         ))}

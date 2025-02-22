@@ -6,7 +6,6 @@ import babyCare from "../../assets/home/babycare.png";
 import pharmacy from "../../assets/home/pharmacy.png";
 import petCare from "../../assets/home/petcare.png";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
-import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import Image from "next/image";
 import CategoryGrid from "./CategoryItem";
 import ProductCarousel from "./ProductCarousel";
@@ -17,20 +16,11 @@ import SSFooter from "./smallScreenComponents/SSFooter";
 import LoginCard from "./LoginCard";
 import CartSidebar from "./SideBar";
 import { useSelector, useDispatch } from "react-redux";
+import BottomCartBar from "./smallScreenComponents/BottomCartBar";
+import Header from "@/layouts/Header";
 
 const Home = ({ userLocation }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isSidebarOpen, setSidebarOpen] = useState(false);
 
-  const placeholders = ["Search vegetable", "Search oil", "Search soap"];
-  const [currentPlaceholderIndex, setCurrentPlaceholderIndex] = useState(0);
-  // For search bar text top to down animation
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setCurrentPlaceholderIndex((prevIndex) => (prevIndex + 1) % placeholders.length);
-  //   }, 2000); // Change placeholder every 2 seconds
-  //   return () => clearInterval(interval);
-  // }, []);
   const handleCategoryClick = (id) => {
     console.log(`Category clicked with ID: ${id}`);
     // You can navigate to the category's link or perform another action here
@@ -47,53 +37,12 @@ const Home = ({ userLocation }) => {
   return (
     <>
       {/* header */}
-      <nav className="w-full h-40 lg:h-20 flex flex-col lg:flex-row items-center overflow-hidden lg:border-b absolute top-0 bg-white">
-        <div className=" hidden  w-[12%] h-full p-4 border-r hover:bg-gray-50 lg:flex justify-center items-center">
-          <Image className="object-contain h-16" src={logo} alt="logo" />
-        </div>
-        <div className="w-full lg:w-8/12 flex flex-col lg:flex-row">
-          <div className="w-full lg:w-1/3 h-full px-8 lg:px-12 lg:py-4  items-center hover:bg-gray-50 overflow-hidden">
-            <p className="font-semibold text-lg text-gray-800">Deliver in:</p>
-            <p className="text-gray-800 text-xs">{userLocation}</p>
-          </div>
-          <div className="w-3/4 p-6 flex justify-center">
-            <div className="w-full border rounded-xl pl-2 flex justify-center items-center flex-grow bg-[#F8F8F8]">
-              <SearchOutlinedIcon />
-              <input
-                className="w-full px-4 py-3  focus:outline-none bg-[#F8F8F8]"
-                placeholder={placeholders[currentPlaceholderIndex]}
-                name=""
-              />
-            </div>
-          </div>
-        </div>
+      <Header userLocation={userLocation}/>
 
-        <div className="  hidden  w-[10%]  lg:flex items-center justify-end px-4 space-x-4">
-          <button
-            className="text-green-700 text-lg"
-            onClick={() => setIsOpen(true)}
-          >
-            Login
-          </button>
-
-          {/* LoginCard Modal */}
-          <LoginCard open={isOpen} setOpen={setIsOpen} />
-        </div>
-        <div className=" hidden w-[15%] lg:flex items-center justify-end px-4 space-x-4">
-          <button
-            className="bg-green-700 text-white px-4 py-3 rounded-lg"
-            onClick={() => setSidebarOpen(true)}
-          >
-            <ShoppingCartOutlinedIcon />
-            My Cart
-          </button>
-          <CartSidebar open={isSidebarOpen} setOpen={setSidebarOpen} />
-        </div>
-      </nav>
       {/* Product for big screen */}
       <div className="hidden lg:min-h-screen lg:block px-28 mt-20 ">
         {/* Advertisement */}
-        <div className="hidden lg:block ">
+        <div className="hidden lg:block">
           <Image src={panCorner} alt="Pan Shop" className="object-cover" />
         </div>
         <div className="mt-4 hidden  px-4 lg:w-3/4 lg:grid lg:grid-cols-3 grid-cols-2 gap-4">
@@ -125,13 +74,14 @@ const Home = ({ userLocation }) => {
             <ProductCarousel
               title={section.title}
               products={section.productData}
+              route={section.route}
             />
           </div>
         ))}
       </div>
       {/* Product for small screen*/}
       <div className="min-h-screen mt-36 overflow-x-hidden block lg:hidden">
-        <ShopByCategory categories={categories} title={"Shop by Category"} />
+        <ShopByCategory categories={categories} title={"Shop by Category"} source={'shopByCategory'}/>
         <ShopByCategory categories={shopByStore} title={"Shop by store"} />
         <SmallScreenProductCarousel
           title={"Hot deals"}
@@ -148,6 +98,7 @@ const Home = ({ userLocation }) => {
           categories={haveYouTriedData}
           title={"Have you tried these yet?"}
         />
+        <BottomCartBar/>
         <SSFooter />
       </div>
     </>

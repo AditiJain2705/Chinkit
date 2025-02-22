@@ -10,19 +10,19 @@ export default function TwoColumnCategory({ categories, title }) {
           {categories.map((category, index) => (
             <div
               key={index}
-              className="flex flex-col items-center bg-white p-4 rounded-lg shadow hover:shadow-lg transition duration-200"
+              className="flex flex-col items-center bg-[#DAF2FF] p-4 rounded-lg shadow hover:shadow-lg transition duration-200 mb-4"
             >
               <Link href={`${category.link}`}>
-                <div className="w-20 h-20 relative mb-3 bg-[#E5F3F3]">
+                <div className="relative mb-3">
                   <Image
-                    src={category.image}
+                    src={category.image.trimEnd()}
                     alt={category.name}
-                    layout="fill"
-                    objectFit="contain"
+                    width={250}
+                    height={160}
                     className="rounded-lg"
                   />
                 </div>
-                <p className="text-sm font-medium text-gray-700 text-center">
+                <p className="text-sm  text-gray-700 text-center font-bold">
                   {category.name}
                 </p>
               </Link>

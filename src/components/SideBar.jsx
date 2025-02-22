@@ -75,7 +75,7 @@ const CartSidebar = ({ open, setOpen }) => {
           </div>
 
           {/* Cart Items */}
-          <Card className="mx-3 shadow-none mt-4">
+          <Card className="mx-3 shadow-none mt-4" key={1}>
             <div className="w-full flex p-4">
               <div className="bg-gray-100  text-black p-2 rounded-xl">
                 <TimerOutlinedIcon />
@@ -87,11 +87,13 @@ const CartSidebar = ({ open, setOpen }) => {
             {items.map((item) => (
               <div key={item.id} className="flex justify-around">
                 <div className="h-full">
-                  <img
-                    src={item.src}
+                  {item.image &&<Image
+                    src={item.image.trimEnd()}
                     alt={`${item.name}`}
+                    height={40}
+                    width={40}
                     className="object-contain"
-                  />
+                  /> }
                 </div>
                 <div>
                   <Typography className="text-xs ">

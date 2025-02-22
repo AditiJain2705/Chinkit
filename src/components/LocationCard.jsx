@@ -66,8 +66,8 @@ const LocationCard = ({ onLocationSet }) => {
     onLocationSet(suggestion);
   };
 
-  return (
-    <div className="fixed inset-0 flex items-center justify-center  z-50">
+  return (<>
+    <div className="fixed inset-0 hidden md:flex items-center justify-center  z-50 backdrop-brightness-50">
       <div className="bg-white  p-6 shadow-lg max-w-lg w-full">
         <h2 className="text-lg font-semibold text-gray-800 mb-4">
           Welcome to Blinkit
@@ -125,6 +125,31 @@ const LocationCard = ({ onLocationSet }) => {
         </div>
       </div>
     </div>
+    <div className="fixed inset-0 flex md:hidden items-center justify-center  z-50 p-6 backdrop-brightness-50" > 
+      <div className="bg-white  p-6 shadow-lg max-w-lg w-full items-center text-center rounded-lg">
+        <h2 className="text-lg font-semibold text-gray-800 mb-1">
+          Select Your Location
+        </h2>
+      <p className="text-gray-700 text-sm mb-2">           We need your location to show you curated assortment from your nearest store
+      </p>
+
+        <div className="flex justify-between  items-center text-center w-full">
+          <button
+            onClick={handleDetectLocation}
+            className="text-[12px] bg-green-700 hover:bg-green-600 text-white py-2 px-6 rounded"
+          >
+            Use my location
+          </button>
+          <button
+            onClick={handleDetectLocation}
+            className="text-[12px] border border-green-700 text-green-700/80 py-2 px-6 rounded"
+          >
+           Select manually
+          </button>
+        </div>
+      </div>
+    </div>
+    </>
   );
 };
 

@@ -14,6 +14,7 @@ export const fetchProducts = createAsyncThunk(
 const dummyData = [
   {
     title: "Dairy, Bread & Eggs",
+    route:'dbe',
     productData: [
       {
         id: 1,
@@ -21,294 +22,348 @@ const dummyData = [
         size: "500 ml",
         price: 33,
         time: "30 MINS",
+        image:
+          "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/app/assets/products/sliding_images/jpeg/1c0db977-31ab-4d8e-abf3-d42e4a4b4632.jpg?ts=1706182142",
       },
 
+      {
+        id: 2,
+        name: "Amul Masti Curd",
+        size: "1 kg",
+        price: 75,
+        time: "30 MINS",
+        image:
+          "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/app/assets/products/sliding_images/jpeg/c2b22cd4-b144-4266-901a-ff4ae82aa912.jpg?ts=1726473621",
+      },
       {
         id: 3,
         name: "Amul Masti Curd",
-        size: "1 kg",
-        price: 75,
+        size: "200 g",
+        price: 23,
         time: "30 MINS",
+        image:
+          "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/app/assets/products/sliding_images/jpeg/73bcc2db-0799-4014-ab75-029bfcdb8375.jpg?ts=1726473603  ",
       },
       {
         id: 4,
-        name: "Amul Masti Curd",
-        size: "200 g",
-        price: 23,
-        time: "30 MINS",
-      },
-      {
-        id: 5,
         name: "Amul Salted Butter",
         size: "100 g",
         price: 60,
         time: "30 MINS",
+        image:
+          "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/app/assets/products/sliding_images/jpeg/0be0d49a-4dae-408a-8786-afae1dd05cb1.jpg?ts=1707312314",
       },
       {
-        id: 6,
+        id: 5,
         name: "Super Crustless White Bread",
         size: "300 g",
         price: 50,
         time: "30 MINS",
+        image:
+          "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/app/images/products/sliding_image/503609a.jpg",
       },
       {
-        id: 7,
+        id: 6,
         name: "Pure Eggs Special",
         size: "6 pieces",
         price: 55,
         time: "30 MINS",
+        image:
+          "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/da/cms-assets/cms/product/05aeaeb4-4749-4808-9386-6dccb8f17035.jpg?ts=1739355232",
       },
 
       {
-        id: 9,
+        id: 7,
         name: "Amul Masti Curd",
         size: "1 kg",
         price: 75,
         time: "30 MINS",
+        image:
+          "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/app/assets/products/sliding_images/jpeg/c2b22cd4-b144-4266-901a-ff4ae82aa912.jpg?ts=1726473621",
       },
       {
-        id: 10,
+        id: 8,
         name: "Amul Masti Curd",
         size: "200 g",
         price: 23,
         time: "30 MINS",
+        image:
+          "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/app/assets/products/sliding_images/jpeg/73bcc2db-0799-4014-ab75-029bfcdb8375.jpg?ts=1726473603  ",
       },
       {
-        id: 11,
+        id: 9,
         name: "Amul Salted Butter",
         size: "100 g",
         price: 60,
         time: "30 MINS",
+        image:
+          "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/app/assets/products/sliding_images/jpeg/0be0d49a-4dae-408a-8786-afae1dd05cb1.jpg?ts=1707312314",
       },
       {
-        id: 12,
+        id: 10,
         name: "Super Crustless White Bread",
         size: "300 g",
         price: 50,
         time: "30 MINS",
+        image:
+          "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/app/images/products/sliding_image/503609a.jpg",
       },
       {
-        id: 13,
+        id: 11,
         name: "Pure Eggs Special",
         size: "6 pieces",
         price: 55,
         time: "30 MINS",
+        image:
+          "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/da/cms-assets/cms/product/05aeaeb4-4749-4808-9386-6dccb8f17035.jpg?ts=1739355232",
       },
       {
-        id: 14,
+        id: 12,
         name: "Amul Gold Full Cream Fresh Milk",
         size: "500 ml",
         price: 33,
         time: "30 MINS",
+        image:
+          "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/app/assets/products/sliding_images/jpeg/1c0db977-31ab-4d8e-abf3-d42e4a4b4632.jpg?ts=1706182142",
       },
     ],
   },
   {
     title: "Rolling paper & tobacco",
+    route:'rpt',
     productData: [
       {
-        id: 15,
-        name: "Amul Gold Full Cream Fresh Milk",
-        size: "500 ml",
-        price: 33,
-        time: "30 MINS",
+        id: 13,
+        name: "Cheetos Cheez Puffs",
+        size: "28 g",
+        price: 10,
+        time: "10 MINS",
+        image:"https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/app/assets/products/sliding_images/jpeg/de6faf0d-7cd2-4c79-b850-1ab4968df46c.jpg?ts=1708590985"
       },
 
       {
-        id: 17,
-        name: "Amul Masti Curd",
-        size: "1 kg",
+        id: 14,
+        name: "Cheez-It Snack",
+        size: "42 g",
         price: 75,
         time: "30 MINS",
+        image:'https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/app/assets/products/sliding_images/jpeg/e9c7dfcb-3e42-4a3e-b13d-9b31476cde4c.jpg'
       },
-      { name: "Amul Masti Curd", size: "200 g", price: 23, time: "30 MINS" },
-      { name: "Amul Salted Butter", size: "100 g", price: 60, time: "30 MINS" },
+      {
+        id:15,
+        name: "Beanly Dark Chocolate Spread with Breadsticks",
+        size: "52 g",
+        price: 150,
+        time: "10 MINS",
+        image:'https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/da/cms-assets/cms/product/bb141b2d-4fd6-4e64-af0c-185464e52abb.jpg?ts=1737021197'
+      },
+      {
+        id:16,
+        name: "Cheez-It White Cheddar Cheese Crackers Snack",
+        size: "29 g",
+        price: 154,
+        time: "10 MINS",
+        image:'https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/app/assets/products/sliding_images/jpeg/52c85487-3399-4731-8385-ce3a52f681bf.jpg?ts=1721899356'
+      },
+      {
+        id: 17,
+        name: "Beanly Dark Chocolate Spread with Breadsticks",
+        size: "52 g",
+        price: 150,
+        time: "10 MINS",
+        image:'https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/da/cms-assets/cms/product/bb141b2d-4fd6-4e64-af0c-185464e52abb.jpg?ts=1737021197'
+      },
       {
         id: 18,
-        name: "Super Crustless White Bread",
-        size: "300 g",
-        price: 50,
-        time: "30 MINS",
+        name: "Cheetos Cheez Puffs",
+        size: "28 g",
+        price: 10,
+        time: "10 MINS",
+        image:"https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/app/assets/products/sliding_images/jpeg/de6faf0d-7cd2-4c79-b850-1ab4968df46c.jpg?ts=1708590985"
       },
+
       {
         id: 19,
-        name: "Pure Eggs Special",
-        size: "6 pieces",
-        price: 55,
+        name: "Cheez-It Snack",
+        size: "42 g",
+        price: 75,
         time: "30 MINS",
+        image:'https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/app/assets/products/sliding_images/jpeg/e9c7dfcb-3e42-4a3e-b13d-9b31476cde4c.jpg'
+      },
+      {
+        id: 20,
+        name: "Cheetos Cheez Puffs",
+        size: "28 g",
+        price: 10,
+        time: "10 MINS",
+        image:"https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/app/assets/products/sliding_images/jpeg/de6faf0d-7cd2-4c79-b850-1ab4968df46c.jpg?ts=1708590985"
       },
 
       {
         id: 21,
-        name: "Amul Masti Curd",
-        size: "1 kg",
+        name: "Cheez-It Snack",
+        size: "42 g",
         price: 75,
         time: "30 MINS",
+        image:'https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/app/assets/products/sliding_images/jpeg/e9c7dfcb-3e42-4a3e-b13d-9b31476cde4c.jpg'
       },
       {
-        id: 22,
-        name: "Amul Masti Curd",
-        size: "200 g",
-        price: 23,
-        time: "30 MINS",
+        id:22,
+        name: "Beanly Dark Chocolate Spread with Breadsticks",
+        size: "52 g",
+        price: 150,
+        time: "10 MINS",
+        image:'https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/da/cms-assets/cms/product/bb141b2d-4fd6-4e64-af0c-185464e52abb.jpg?ts=1737021197'
       },
       {
-        id: 23,
-        name: "Amul Salted Butter",
-        size: "100 g",
-        price: 60,
-        time: "30 MINS",
+        id:23,
+        name: "Cheez-It White Cheddar Cheese Crackers Snack",
+        size: "29 g",
+        price: 154,
+        time: "10 MINS",
+        image:'https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/app/assets/products/sliding_images/jpeg/52c85487-3399-4731-8385-ce3a52f681bf.jpg?ts=1721899356'
       },
       {
         id: 24,
-        name: "Super Crustless White Bread",
-        size: "300 g",
-        price: 50,
-        time: "30 MINS",
-      },
-      {
-        id: 25,
-        name: "Pure Eggs Special",
-        size: "6 pieces",
-        price: 55,
-        time: "30 MINS",
-      },
-      {
-        id: 26,
-        name: "Amul Gold Full Cream Fresh Milk",
-        size: "500 ml",
-        price: 33,
-        time: "30 MINS",
+        name: "Beanly Dark Chocolate Spread with Breadsticks",
+        size: "52 g",
+        price: 150,
+        time: "10 MINS",
+        image:'https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/da/cms-assets/cms/product/bb141b2d-4fd6-4e64-af0c-185464e52abb.jpg?ts=1737021197'
       },
     ],
   },
 ];
 const categories = [
   {
-    id: 1,
+    id: 25,
     image:
       "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/layout-engine/2022-12/paan-corner_web.png",
     link: "/paan-corner",
     name: "Paan corner",
   },
   {
-    id: 2,
+    id: 26,
     image:
       "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/layout-engine/2022-11/Slice-2_10.png",
     link: "/dairy-bread-eggs",
     name: "Dairy bread eggs",
   },
   {
-    id: 3,
+    id: 27,
     image:
       "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/layout-engine/2022-11/Slice-3_9.png",
     link: "/fruits-vegetables",
     name: "Fruit vegetables",
   },
   {
-    id: 4,
+    id: 28,
     image:
       "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/layout-engine/2022-11/Slice-4_9.png",
     link: "/cold-drink",
     name: "Cold drink",
   },
   {
-    id: 5,
+    id: 29,
     image:
       "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/layout-engine/2022-11/Slice-5_4.png",
     link: "/snacks",
     name: "Snacks",
   },
   {
-    id: 6,
+    id: 30,
     image:
       "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/layout-engine/2022-11/Slice-6_5.png",
     link: "/instant-food",
     name: "Instant food",
   },
   {
-    id: 7,
+    id: 31,
     image:
       "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/layout-engine/2022-11/Slice-7_3.png",
     link: "/sweet-tooth",
+    name: "Chocolate",
+
   },
   {
-    id: 8,
+    id: 32,
     image:
       "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/layout-engine/2022-11/Slice-8_4.png",
     link: "/bakery",
+    name:' Bakery'
   },
   {
-    id: 9,
+    id: 33,
     image:
       "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/layout-engine/2022-11/Slice-9_3.png",
     link: "/tea-coffee",
+    name:'Tea Coffee'
   },
   {
-    id: 10,
+    id: 34,
     image:
       "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/layout-engine/2022-11/Slice-10.png",
     link: "/aata-dal",
     name: "Atta dal",
   },
   {
-    id: 11,
+    id: 35,
     image:
       "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/layout-engine/2022-12/paan-corner_web.png",
     link: "/paan-corner",
     name: "Paan corner",
   },
   {
-    id: 12,
+    id: 36,
     image:
       "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/layout-engine/2022-11/Slice-2_10.png",
     link: "/dairy-bread-eggs",
     name: "dairy-bread-eggs",
   },
   {
-    id: 13,
+    id: 37,
     image:
       "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/layout-engine/2022-11/Slice-3_9.png",
     link: "/fruits-vegetables",
     name: "fruits-vegetables",
   },
   {
-    id: 14,
+    id: 38,
     image:
       "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/layout-engine/2022-11/Slice-4_9.png",
     link: "/cold-drink",
     name: "cold-drink",
   },
   {
-    id: 15,
+    id: 39,
     image:
       "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/layout-engine/2022-11/Slice-5_4.png",
     link: "/snacks",
     name: "snacks",
   },
   {
-    id: 16,
+    id: 40,
     image:
       "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/layout-engine/2022-11/Slice-6_5.png",
     link: "/instant-food",
     name: "instant-food",
   },
   {
-    id: 17,
+    id: 41,
     image:
       "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/layout-engine/2022-11/Slice-7_3.png",
     link: "/sweet-tooth",
     name: "sweet-tooth",
   },
   {
-    id: 18,
+    id: 42,
     image:
       "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/layout-engine/2022-11/Slice-8_4.png",
     link: "/bakery",
     name: "bakery",
   },
   {
-    id: 19,
+    id: 43,
     image:
       "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/layout-engine/2022-11/Slice-9_3.png",
     link: "/tea-coffee",
@@ -316,44 +371,54 @@ const categories = [
   },
 ];
 const shopByStore = [
-  { link: "/", name: "Toy Store", image: "/path-to-image1.png" },
-  { link: "/", name: "Pet Store", image: "/path-to-image2.png" },
-  { link: "/", name: "Stationaery Store", image: "/path-to-image3.png" },
-  { link: "/", name: "Kids Store", image: "/path-to-image4.png" },
+  { link: "/", name: "Pet Store", image: "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/layout-engine/2024-05/pet-store-new-icon-1.png" },
+  { link: "/", name: "Electronic Store", image: "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/layout-engine/2023-07/electrics-store.png" },
+  { link: "/", name: "Stationaery Store", image: "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/layout-engine/2023-07/stationery-store.png" },
+  { link: "/", name: "Kids Store", image: "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/layout-engine/2023-07/kid-store_0.png " },
 ];
 const hotDeal = [
   {
-    name: "Amul Gold Full Cream Fresh Milk",
+    id:54,
+    name: "Amul Gold Fresh Milk",
     size: "500 ml",
     price: 33,
     time: "30 MINS",
     discount: "33% OFF",
+    image:
+    "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/app/assets/products/sliding_images/jpeg/1c0db977-31ab-4d8e-abf3-d42e4a4b4632.jpg?ts=1706182142",
   },
+
   {
-    name: "Amul Milk",
-    size: "500 ml",
-    price: 60,
-    time: "30 MINS",
-    discount: "30% OFF",
-  },
-  {
+    id:55,
     name: "Amul Masti Curd",
     size: "1 kg",
     price: 75,
     time: "30 MINS",
     discount: "50% OFF",
+    image:
+    "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/app/assets/products/sliding_images/jpeg/73bcc2db-0799-4014-ab75-029bfcdb8375.jpg?ts=1726473603  ",
+  },
+  {
+    id:56,
+    name: "Amul Salted Butter",
+    size: "100 g",
+    price: 60,
+    time: "30 MINS",
+    discount: "20% OFF",
+    image:
+      "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/app/assets/products/sliding_images/jpeg/0be0d49a-4dae-408a-8786-afae1dd05cb1.jpg?ts=1707312314",
   },
 ];
 const cookingIdeas = [
-  { link: "/", name: "Palak Pakoda", image: "/path-to-image1.png" },
-  { link: "/", name: "Payaz Pakoda", image: "/path-to-image2.png" },
-  { link: "/", name: "Rava Dhokla", image: "/path-to-image3.png" },
+  { link: "/", name: "Lauki Sabzi", image: "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/assets/search/usecase/lauki_sabzi_01.png" },
+  { link: "/", name: "Aloo Beans Sabji", image: "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/assets/search/usecase/aloo_beans_sabzi_01.png" },
+  { link: "/", name: "Matar Dal", image: "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/assets/search/usecase/matar_dal_curry_01.png" },
 ];
 const haveYouTriedData = [
-  { link: "/", name: "Home Essentails", image: "/path-to-image1.png" },
-  { link: "/", name: "Travel Essentails", image: "/path-to-image2.png" },
-  { link: "/", name: "Fashion Basics", image: "/path-to-image3.png" },
-  { link: "/", name: "Plant & More", image: "/path-to-image3.png" },
+  { link: "/", name: "Surface Cleaners", image: "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/layout-engine/2024-07/1718624426915-Surface-Cleaners-Fresheners.png" },
+  { link: "/", name: "Cleaning Tools", image: "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/layout-engine/2024-07/1718624437262-Cleaning-Tools-Accessories.png" },
+  { link: "/", name: "Trash Disposal", image: "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/layout-engine/2024-07/1718624445022-Trash-Disposal.png" },
+  { link: "/", name: "Cleaning Gadgets", image: "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/layout-engine/2024-07/1718624452674-Smart-Cleaning-Gadgets.png" },
 ];
 export const fetchCategories = createAsyncThunk(
   "products/fetchCategories",

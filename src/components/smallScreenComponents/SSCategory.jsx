@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function ShopByCategory({ categories, title }) {
+export default function ShopByCategory({ categories, title,source }) {
   return (
     <div className="px-7">
       <div className="">
@@ -10,21 +10,25 @@ export default function ShopByCategory({ categories, title }) {
           {categories.map((category, index) => (
             <div
               key={index}
-              className="flex flex-col items-center bg-white p-4 rounded-lg shadow hover:shadow-lg transition duration-200"
+              className={`flex flex-col items-center   p-4 rounded-lg shadow hover:shadow-lg transition duration-200`}
             >
               <Link href={`${category.link}`}>
-                <div className="w-20 h-20 relative mb-3 bg-[#E5F3F3]">
+                <div className="relative mb-3 ">
                   <Image
-                    src={category.image}
-                    alt={""}
-                    layout="fill"
-                    objectFit="contain"
+                    src={category.image.trimEnd()}
+                    alt={category.name}
+                    height={140}
+                    width={140}
+                 
                     className="rounded-lg"
                   />
                 </div>
-                <p className="text-sm font-medium text-gray-700 text-center">
+                {
+                  source!=='shopByCategory'&&
+                  <p className="text-sm font-bold text-gray-700 text-center">
                   {category.name}
                 </p>
+                }
               </Link>
             </div>
           ))}
