@@ -12,7 +12,7 @@ import {
 } from "../../store/slices/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
 
-const SmallScreenProductCarousel = ({ products, color, title }) => {
+const SmallScreenProductCarousel = ({ products, color, title ,route}) => {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.items);
   const getQuantity = (productId) => {
@@ -57,7 +57,9 @@ const SmallScreenProductCarousel = ({ products, color, title }) => {
       <Slider {...settings} className="w-[90%] ml-5">
         {products.map((product, index) => (
           <div key={index} className="p-1">
-            <div className=" flex flex-col justify-between p-4 bg-white ">
+                  <Link href={`/details/${route}/${product.id}`}>
+
+            <div className=" p-4 bg-white ">
               {product.discount ? (
                 <div className="relative top-10 left-2 w-10 bg-blue-500 text-white text-xs font-bold py-1 px-2 rounded z-20">
                   {product.discount}
@@ -73,11 +75,7 @@ const SmallScreenProductCarousel = ({ products, color, title }) => {
                 className="w-full  object-contain mb-4  border rounded-lg"
               />
               <p
-                className={`text-[10px] flex ${
-                  color ? "bg-yellow-600/25" : "bg-gray-50"
-                } ${
-                  color ? "text-yellow-950" : "text-black"
-                } p-1 w-16 items-center`}
+                className={`text-[10px] bg-gray-300/10 mb-2 `}
               >
                 <TimerOutlinedIcon className="h-3 w-3" />
                 {product.time}
@@ -91,11 +89,11 @@ const SmallScreenProductCarousel = ({ products, color, title }) => {
                            <div className="font-bold border rounded-md bg-green-700 text-white flex justify-around items-center text-xs">
                              <button
                                onClick={() => dispatch(decrementItem(product.id))}
-                               className="px-2 py-1 rounded-l"
+                               className="px-2 py-2 rounded-l"
                              >
                                -
                              </button>
-                             <span className="px-4">{getQuantity(product.id)}</span>
+                             <span className="px-4 py-2">{getQuantity(product.id)}</span>
                              <button
                                onClick={() =>
                                  dispatch(
@@ -107,7 +105,7 @@ const SmallScreenProductCarousel = ({ products, color, title }) => {
                                    })
                                  )
                                }
-                               className="px-2 py-1 rounded-r"
+                               className="px-2 py-2 rounded-r"
                              >
                                +
                              </button>
@@ -133,6 +131,7 @@ const SmallScreenProductCarousel = ({ products, color, title }) => {
                        </div>
                      </div>
             </div>
+            </Link>
           </div>
         ))}
       </Slider>

@@ -85,8 +85,8 @@ const CartSidebar = ({ open, setOpen }) => {
               </p>
             </div>
             {items.map((item) => (
-              <div key={item.id} className="flex justify-around">
-                <div className="h-full">
+              <div key={item.id} className="grid grid-cols-3 items-center gap-4">
+                <div className="h-full w-full relative right-0">
                   {item.image &&<Image
                     src={item.image.trimEnd()}
                     alt={`${item.name}`}

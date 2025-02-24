@@ -5,6 +5,7 @@ import Home from "@/components/HomePage";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { store, persistor } from "../store/store";
+import Header from "@/components/Header";
 export default function Page() {
   const [userLocation, setUserLocation] = useState(null);
 
@@ -16,7 +17,8 @@ export default function Page() {
     <div className="bg-white">
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
-          {!userLocation && <LocationCard onLocationSet={handleLocationSet} />}
+          {/* {!userLocation && <LocationCard onLocationSet={handleLocationSet} />} */}
+          <Header />
           <Home userLocation={userLocation} />
         </PersistGate>
       </Provider>

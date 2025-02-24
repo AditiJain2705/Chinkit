@@ -12,33 +12,32 @@ import {
   decrementItem,
 } from "../../store/slices/cartSlice";
 import { CardMedia } from "@mui/material";
-const DetailPage = ({ userLocation }) => {
+const SSDetailPage = ({ userLocation }) => {
   const [productDetail, setProductDetail] = useState(null);
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.items);
 
   const path = usePathname();
-  const { products } = useSelector((state) => state.products);
+  const hotDeal = useSelector((state) => state.products.hotDeal);
   const getQuantity = (productId) => {
     const product = cartItems.find((item) => item.id === productId);
 
     return product ? product.quantity : 0;
   };
   useEffect(() => {
-    if (!path || !products?.length) return;
+    if (!path || !hotDeal?.length) return;
 
     const Idpart = path.split("/");
     const route = Idpart[2];
     const id = Number(Idpart[3]);
 
-    const matchedCategory = products.find((item) => item.route === route);
-    if (matchedCategory) {
-      const product = matchedCategory.productData.find(
+    if (hotDeal) {
+      const product = hotDeal.find(
         (item) => item.id === id
       );
       setProductDetail(product || null);
     }
-  }, [path, products]);
+  }, [path, hotDeal]);
 
   if (!productDetail) return <p>Loading product details...</p>;
   const benefits = [
@@ -174,4 +173,4 @@ const DetailPage = ({ userLocation }) => {
   );
 };
 
-export default DetailPage;
+export default SSDetailPage;

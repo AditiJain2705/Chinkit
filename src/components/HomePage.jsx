@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import logo from "../../assets/home/logo.png";
 import panCorner from "../../assets/home/pancorner.webp";
 import babyCare from "../../assets/home/babycare.png";
 import pharmacy from "../../assets/home/pharmacy.png";
@@ -17,7 +16,7 @@ import LoginCard from "./LoginCard";
 import CartSidebar from "./SideBar";
 import { useSelector, useDispatch } from "react-redux";
 import BottomCartBar from "./smallScreenComponents/BottomCartBar";
-import Header from "@/layouts/Header";
+import Header from "@/components/Header";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 
 const Home = ({ userLocation }) => {
@@ -42,9 +41,7 @@ const Home = ({ userLocation }) => {
   return (
     <>
       {/* header */}
-    
-      <Header userLocation={userLocation}/>
-
+<Header userLocation={userLocation}/>
       {/* Product for big screen */}
       <div className="hidden lg:min-h-screen lg:block px-28 mt-20 ">
         {/* Advertisement */}
@@ -93,11 +90,13 @@ const Home = ({ userLocation }) => {
           title={"Hot deals"}
           products={hotDeal}
           color={"bg-yellow-700"}
+          route='hotDeal'
         />
         <SmallScreenProductCarousel
           title={"Your daily fresh needs"}
           products={hotDeal}
           color={"bg-yellow-700"}
+           route='hotDeal'
         />
         <ShopByCategory categories={cookingIdeas} title={"Cooking ideas"} />
         <TwoColumnCategory

@@ -12,7 +12,7 @@ export default function ShopByCategory({ categories, title,source }) {
               key={index}
               className={`flex flex-col items-center   p-4 rounded-lg shadow hover:shadow-lg transition duration-200`}
             >
-              <Link href={`${category.link}`}>
+              <Link href={`/`}>
                 <div className="relative mb-3 ">
                   <Image
                     src={category.image.trimEnd()}
