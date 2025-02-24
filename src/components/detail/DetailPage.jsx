@@ -77,7 +77,7 @@ const DetailPage = ({ userLocation }) => {
   component="img"
   image={productDetail.image} // Use 'image' instead of 'src'
   alt={productDetail.name}
-  className="object-contain h-[30vh] lg:h-[40vh]"
+  className="object-contain "
 
 />
 

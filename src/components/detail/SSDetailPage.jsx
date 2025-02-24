@@ -84,8 +84,8 @@ const SSDetailPage = ({ userLocation }) => {
           </div>
 
           {/* Product Info */}
-          <div className=" border rounded-lg p-8">
-            <h1 className="text-2xl font-semibold mb-2">
+          <div className=" border rounded-lg p-8 text-black">
+            <h1 className="text-2xl font-semibold mb-2 ">
               {productDetail.name ?? "--"}
             </h1>
 

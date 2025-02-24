@@ -17,7 +17,7 @@ export default function Page() {
     <div className="bg-white">
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
-          {/* {!userLocation && <LocationCard onLocationSet={handleLocationSet} />} */}
+          {!userLocation && <LocationCard onLocationSet={handleLocationSet} />}
           <Header />
           <Home userLocation={userLocation} />
         </PersistGate>

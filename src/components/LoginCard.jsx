@@ -65,13 +65,14 @@ const LoginCard = ({ open, setOpen }) => {
 
   return (
     <StyledModal open={open} onClose={handleClose}>
-      <ModalBox >
+      <ModalBox className=" flex flex-col justify-center items-center">
         <IconButton
           sx={{ position: "absolute", top: 10, right: 10 }}
           onClick={handleClose}
         >
           <Close />
         </IconButton>
+        <div className="w-4/5">
         <Typography variant="h5" fontWeight="bold" color="black">
           India's last minute app
         </Typography>
@@ -83,23 +84,24 @@ const LoginCard = ({ open, setOpen }) => {
           margin="normal"
           label="Enter your 10-digit mobile number"
           value={formData.mobileNo}
-          className="rounded-xl md:w-3/5"
+          className="rounded-xl"
           onChange={(e) => setFormData({ ...formData, mobileNo: e.target.value })}
           inputProps={{ maxLength: 10 }}
           sx={{ mt: 2 }}
         />
-
+<br/>
         <Button
-          fullWidth
-          variant="contained"
-          color="primary"
+                  
           sx={{ mt: 2, height: 48,}}
-          className="bg-[#9C9C9C]  md:w-3/5"
+          className="text-xs bg-gray-500/60 text-white py-2  rounded w-full"
+
           disabled={loading}
           onClick={handleSubmit}
         >
           {loading ? <CircularProgress size={24} sx={{ color: "white" }} /> : "Continue"}
         </Button>
+        </div>
+      
       </ModalBox>
     </StyledModal>
   );
