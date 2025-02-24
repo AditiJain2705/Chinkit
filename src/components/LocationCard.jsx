@@ -133,16 +133,16 @@ const LocationCard = ({ onLocationSet }) => {
       <p className="text-gray-700 text-sm mb-2">           We need your location to show you curated assortment from your nearest store
       </p>
 
-        <div className="flex justify-between  items-center text-center w-full">
+        <div className="grid grid-cols-2 gap-4  items-center text-center w-full">
           <button
             onClick={handleDetectLocation}
-            className="text-[12px] bg-green-700 hover:bg-green-600 text-white py-2 px-6 rounded"
+            className="text-xs bg-green-700 hover:bg-green-600 text-white py-2  rounded"
           >
             Use my location
           </button>
           <button
             onClick={handleDetectLocation}
-            className="text-[12px] border border-green-700 text-green-700/80 py-2 px-6 rounded"
+            className="text-xs border border-green-700 text-green-700/80 py-2  rounded"
           >
            Select manually
           </button>

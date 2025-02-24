@@ -14,8 +14,7 @@ const Header = ({ userLocation }) => {
     const placeholders = ["Search vegetable", "Search oil", "Search soap"];
     const [currentPlaceholderIndex, setCurrentPlaceholderIndex] = useState(0);
   return (
-    <div>
-       <nav className="w-full h-40 lg:h-20 flex flex-col lg:flex-row items-center overflow-hidden lg:border-b absolute top-0 bg-white">
+    <nav className="w-full lg:h-20 flex flex-col lg:flex-row items-center overflow-hidden lg:border-b fixed top-0 bg-white">
         <div className=" hidden  w-[12%] h-full p-4 border-r hover:bg-gray-50 lg:flex justify-center items-center">
           <Image className="object-contain h-16" src={logo} alt="logo" />
         </div>
@@ -44,7 +43,6 @@ const Header = ({ userLocation }) => {
             Login
           </button>
 
-          {/* LoginCard Modal */}
           <LoginCard open={isOpen} setOpen={setIsOpen} />
         </div>
         <div className=" hidden w-[15%] lg:flex items-center justify-end px-4 space-x-4">
@@ -57,8 +55,7 @@ const Header = ({ userLocation }) => {
           </button>
           <CartSidebar open={isSidebarOpen} setOpen={setSidebarOpen} />
         </div>
-      </nav> 
-    </div>
+      </nav>
   )
 }
 

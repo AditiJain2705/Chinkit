@@ -18,9 +18,14 @@ import CartSidebar from "./SideBar";
 import { useSelector, useDispatch } from "react-redux";
 import BottomCartBar from "./smallScreenComponents/BottomCartBar";
 import Header from "@/layouts/Header";
+import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 
 const Home = ({ userLocation }) => {
-
+ const [isOpen, setIsOpen] = useState(false);
+    const [isSidebarOpen, setSidebarOpen] = useState(false);
+  
+    const placeholders = ["Search vegetable", "Search oil", "Search soap"];
+    const [currentPlaceholderIndex, setCurrentPlaceholderIndex] = useState(0);
   const handleCategoryClick = (id) => {
     console.log(`Category clicked with ID: ${id}`);
     // You can navigate to the category's link or perform another action here
@@ -37,6 +42,7 @@ const Home = ({ userLocation }) => {
   return (
     <>
       {/* header */}
+    
       <Header userLocation={userLocation}/>
 
       {/* Product for big screen */}
